@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #1F1F1F;
+      color: white;
+      margin: 10;
+      padding: 0;
+    }
+    
+    .tooltip {
+      display: none;
+      position: absolute;
+      width: 300px;
+      border-radius: 10px;
+      background-color: rgba(69, 160, 73, 0.8);
+      border: 1px solid #ccc;
+      padding: 10px;
+    }
+
+    .emoji-container {
+      position: absolute;
+      left: 20px;
+      bottom: 20px;
+    }
+
+    .emoji-container:hover .tooltip {
+      display: block;
+      z-index: 1;
+      position: relative;
+    }
+    
+    .container-wrapper {
+      display: flex;
+    }
+
+    .right-container {
+      width: 30%;
+      max-width: 1200px;
+      height: 550px;
+      margin: 0 10px;
+      padding: 20px;
+      background-color: #383838;
+      border: 1px solid #1F1F1F;
+      border-radius: 5px;
+    }
+
+    .left-container {
+      width: 70%;
+      height: 550px;
+      margin-right: 10px; 
+      padding: 20px;
+      background-color: #383838;
+      border: 1px solid #1F1F1F;
+      border-radius: 5px;
+      position: relative;
+    }
+
+    .container {
+      width: 100%;
+    }
+
+    video {
+      width: 100%;
+      height: 400px;
+      display: block;
+      border: 5px solid black;
+      border-radius: 5px;
+      z-index: 0;
+      position: relative;
+    }
+
+    .result {
+      display: inline-block;
+      margin-left: 150px;
+      margin-right: 5px;
+    }
+
+    p {
+      display: inline-block;
+      margin-left: 14px;
+      margin-right: 10px;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container-wrapper">
+  <div class="left-container">
+    <div class="logo-container">
+      <img class="logo" src="https://static1.squarespace.com/static/5b0873aa297114c1a6fb9062/t/5f1a4230a3dfcf1af7c48a90/1706453056541/" width="240" height="75" alt="Queens Hyperloop Logo">
+      <img class="logo" src="https://www.cognitoforms.com/file/e71bC_tENqDLobZyYaMTW7rUTXifBtLc9M83RD2DES8QQDRWr6Ds3O5WtsXJAZqA" width="400" height="90" alt="Queens Hyperloop Logo">
+    </div>
+    <div class="emoji-container">
+      <span class="emoji">❔</span>
+      <div class="tooltip">
+        <p class="hidden-paragraph">User Manuel:<br> Objects Detected: number of objects on screen <br> Warning: Potentially dangerous objects</nav></p>
+      </div>
+    </div>
+    <div class="container">
+      <video controls autoplay>
+        <source src="static/files/Videos/bike.mp4" type="video\mp4">
+      </video>
+    </div>
+    <div class="container">
+      <p class="result">Objects Detected 🛠️   : </p>
+      <p class="result">Warning ⚠ : </p>
+    </div>
+  </div>
+  <div class="right-container">
+    <p>Objects Detected</p>
+    <p>Certainty %</p>
+    <p>Time</p>
+  </div>
+</div>
+
+<script>
+  // Access webcam and stream video to <video> element
+
+  /**
+  navigator.mediaDevices.getUserMedia({ video: true })
+    .then(function(stream) {
+      var video = document.getElementById('webcam');
+      video.srcObject = stream;
+      video.onloadedmetadata = function(e) {
+        video.play();
+      };
+    })
+    .catch(function(err) {
+      console.log("Error accessing webcam: " + err);
+    });*/
+</script>
+
+</body>
+</html>
